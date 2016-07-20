@@ -1,6 +1,6 @@
 ### rancher-xe-guest
 
-![RancherOS logo](https://raw.githubusercontent.com/HipsterWhale/rancher-xe-guest/master/logo.png)
+![RancherOS logo](https://raw.githubusercontent.com/loldaves/rancher-xe-guest/master/logo.png)
 
 This image provides the XenServer Guest Utils for RancherOS.
 
@@ -9,7 +9,7 @@ This image provides the XenServer Guest Utils for RancherOS.
 ##### Start it manually
 
 ```
-sudo system-docker run -d --net=host --privileged=true bahaika/rancher-xe-guest:latest
+sudo system-docker run -d --restart=always --name xe-guest --net=host --privileged=true loldaves/rancher-xe-guest:latest
 ```
 
 ##### Use cloud-config.yml
@@ -21,7 +21,7 @@ rancher:
   services:
     xe-guest:
       container_name: xe-guest
-      image: bahaika/rancher-xe-guest:latest
+      image: loldaves/rancher-xe-guest:latest
       net: host
       privileged: true
       labels:
